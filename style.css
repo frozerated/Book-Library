@@ -88,6 +88,7 @@ body{
 .books-container{
   display: grid;
   grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  align-content: start;
   gap: 8px;
   padding:12px;
   margin: 24px;
@@ -100,7 +101,10 @@ body{
 
 .card{
   display: grid;
-  grid-template-rows: 2fr repeat(3, 1fr);
+  grid-template-rows: subgrid;
+  gap:0;
+  grid-row: span 4;
+
 
   background-color: var(--card-bg);
   color: var(--text-body);
