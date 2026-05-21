@@ -45,8 +45,23 @@ function displayBooks(){
     }
 }
 
+function addBook(){
+    let addBtn = document.querySelector("#addBook");
+    addBtn.addEventListener('click', (event)=>{
+        event.preventDefault();
 
+        let form = document.querySelector('#form');
+        let title = document.querySelector('#title').value;
+        let author = document.querySelector('#author').value;
+        let pages = document.querySelector('#pages').value;
+        let haveRead = document.querySelector("input[name='status']:checked")?.value;
 
+        addBookToLibrary(title, author, pages, haveRead);
+        
+    })
+}
+
+addBook();
 // Temporary (For viewing display result)
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 259,  true)
 addBookToLibrary('The Book', 'The amazing author', 259)
