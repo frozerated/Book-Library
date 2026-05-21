@@ -42,6 +42,11 @@ function displayBooks(){
         let status = document.createElement('p');
         status.innerHTML = `Status: <span>${(book['haveRead'] ? 'Read' : 'Unread')}</span>`
         card.appendChild(status);
+
+        let removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Remove'
+        removeBtn.className = 'removeBtn'
+        card.appendChild(removeBtn);
     }
 }
 
@@ -72,6 +77,8 @@ function updateLibrary(){
 addBook();
 // Temporary (For viewing display result)
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 259,  true)
+addBookToLibrary('The Book', 'The amazing author', 259)
+addBookToLibrary('The Book', 'The amazing author', 259)
 addBookToLibrary('The Book', 'The amazing author', 259)
 console.log(myLibrary);
 
