@@ -27,9 +27,21 @@ function displayBooks(){
         card.className = 'card';
         library.appendChild(card)
 
-        let bookInfo = document.createElement('p');
-        bookInfo.textContent = book.info();
-        card.appendChild(bookInfo);
+        let header = document.createElement('h2');
+        header.textContent = book['title']
+        card.appendChild(header);
+
+        let author = document.createElement('p');
+        author.innerHTML = `Author: <u> ${book['author']} </u>`;
+        card.appendChild(author)
+        
+        let pages = document.createElement('p');
+        pages.textContent = `Pages: ${book['pages']}`;
+        card.appendChild(pages);
+
+        let status = document.createElement('p');
+        status.innerHTML = `Status: <span>${(book['haveRead'] ? 'Read' : 'Unread')}</span>`
+        card.appendChild(status);
     }
 }
 
