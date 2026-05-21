@@ -102,7 +102,7 @@ body{
 .card{
   display: grid;
   grid-template-rows: subgrid;
-  gap:0;
+  gap:12px;
   grid-row: span 4;
 
 
