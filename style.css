@@ -5,6 +5,7 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
+  padding:0;
 }
 
 *:not(dialog) {
@@ -116,4 +117,43 @@ body{
 
 .sidebar{
   background-color: var(--bg-secondary);
+  padding: 12px;
+}
+
+.sidebar h1{
+  text-align: center;
+  color:var(--text-title);
+}
+
+.sidebar > form{
+  display: grid;
+  grid-template-rows:repeat(auto-fit, 1fr);
+
+  font-size: 18px;
+  color: var(--text-title);
+
+}
+.sidebar > form >  input[type="text"]{
+  margin-bottom: 12px;
+  padding:3px 8px;
+
+  background-color: #D3C09C;
+  border:1px solid var(--card-border);
+  border-radius: 3px;
+  outline: none;
+  color: var(--text-body);
+}
+li{
+  list-style: none;
+  display: inline;
+  margin-right: 8px;
+}
+
+form > button{
+  margin-top: 12px;;
+  background-color: var(--btn-add-bg);
+  color: var(--text-light);
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
 }
