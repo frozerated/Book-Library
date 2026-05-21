@@ -46,8 +46,45 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+
+/* STYLING STARTS HERE  */
+
+:root {
+  --bg-main: #F4EBD0;
+  --bg-secondary: #E8D8B5;
+
+  --container-bg: #7A8450;
+  --container-border: #5C6332;
+
+  --card-bg: #EFE1C6;
+  --card-border: #8B6B4A;
+  --card-shadow: #B89B72;
+
+  --text-title: #3E2F26;
+  --text-body: #5B4636;
+  --text-light: #F8F3E8;
+
+  --btn-add-bg: #5F6F52;
+  --btn-add-hover: #4B5A3F;
+
+  --btn-remove-bg: #7B3F3F;
+  --btn-remove-hover: #5E2E2E;
+
+  --accent-gold: #C2A878;
+  --accent-blue: #6E7F80;
+  --accent-copper: #A26749;
+}
 .card{
-  border: 2px solid black;
   display: grid;
   grid-template-rows: 2fr repeat(3, 1fr);
+
+  background-color: var(--card-bg);
+  color: var(--text-body);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 12px 8px;
+}
+
+.card > h2{
+  color: var(--text-title);
 }
