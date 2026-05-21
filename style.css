@@ -74,6 +74,20 @@ h1, h2, h3, h4, h5, h6 {
   --accent-blue: #6E7F80;
   --accent-copper: #A26749;
 }
+
+.books-container{
+  display: grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px;
+  padding:12px;
+  margin: 24px;
+
+  background-color: var(--container-bg);
+  border: var(--container-border) 2px solid;
+  border-radius: 12px;
+}
+
+
 .card{
   display: grid;
   grid-template-rows: 2fr repeat(3, 1fr);
