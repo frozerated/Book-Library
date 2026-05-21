@@ -118,6 +118,23 @@ body{
   color: var(--text-title);
 }
 
+.card > .removeBtn{
+  color: var(--text-light);
+  background-color: var(--btn-remove-bg);
+  border: none;
+  border-radius: 8px;
+  padding: 3px;
+
+}
+
+.card > .removeBtn:hover{
+  background-color: var(--btn-remove-hover);
+}
+
+button{
+  cursor: pointer;
+}
+
 
 .sidebar{
   background-color: var(--bg-secondary);
@@ -161,3 +178,4 @@ form > button{
   border-radius: 6px;
   padding: 12px;
 }
+
