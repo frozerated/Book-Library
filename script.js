@@ -18,3 +18,27 @@ function addBookToLibrary(title, author, pages, haveRead){
   let newBook = new Book(title, author, pages, haveRead)
   myLibrary.push(newBook);
 }
+
+
+function displayBooks(){
+    let library = document.querySelector('.books-container');
+    for(book of myLibrary){
+        card = document.createElement('div')
+        card.className = 'card';
+        library.appendChild(card)
+
+        let bookInfo = document.createElement('p');
+        bookInfo.textContent = book.info();
+        card.appendChild(bookInfo);
+    }
+}
+
+
+
+// Temporary (For viewing display result)
+addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 259,  true)
+addBookToLibrary('The Book', 'The amazing author', 259)
+console.log(myLibrary);
+
+
+displayBooks();
