@@ -75,6 +75,10 @@ h1, h2, h3, h4, h5, h6 {
   --accent-copper: #A26749;
 }
 
+body{
+  background-color: var(--bg-main);
+}
+
 .books-container{
   display: grid;
   grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
@@ -102,4 +106,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .card > h2{
   color: var(--text-title);
+}
+
+
+.sidebar{
+  background-color: var(--bg-secondary);
 }
