@@ -79,6 +79,11 @@ body{
   background-color: var(--bg-main);
 }
 
+.main{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  min-height: 100vh;
+}
 .books-container{
   display: grid;
   grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
