@@ -59,7 +59,7 @@ function addBook(){
 
         addBookToLibrary(title, author, pages, haveRead);
         updateLibrary();
-        
+        form.reset();
     })
 }
 
@@ -67,6 +67,8 @@ function updateLibrary(){
     library.replaceChildren();
     displayBooks();
 }
+
+
 addBook();
 // Temporary (For viewing display result)
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 259,  true)
