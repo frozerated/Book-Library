@@ -19,9 +19,9 @@ function addBookToLibrary(title, author, pages, haveRead){
   myLibrary.push(newBook);
 }
 
-
+let library = document.querySelector('.books-container');
 function displayBooks(){
-    let library = document.querySelector('.books-container');
+    
     for(book of myLibrary){
         card = document.createElement('div')
         card.className = 'card';
@@ -46,6 +46,7 @@ function displayBooks(){
 }
 
 function addBook(){
+    
     let addBtn = document.querySelector("#addBook");
     addBtn.addEventListener('click', (event)=>{
         event.preventDefault();
@@ -57,10 +58,15 @@ function addBook(){
         let haveRead = document.querySelector("input[name='status']:checked")?.value;
 
         addBookToLibrary(title, author, pages, haveRead);
+        updateLibrary();
         
     })
 }
 
+function updateLibrary(){
+    library.replaceChildren();
+    displayBooks();
+}
 addBook();
 // Temporary (For viewing display result)
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 259,  true)
