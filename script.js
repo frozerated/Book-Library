@@ -139,12 +139,11 @@ function removeBook(book_id){
     }
 }
 
+
+addBookToLibrary('Prey', 'Michael Crichton', 502,  true)
+addBookToLibrary('Another Book', 'frozerated', 203)
+addBookToLibrary('The Lincoln Lawyer ', 'Michael Connelly', 489, true)
+addBookToLibrary('This is yet another book', 'The amazing author', 259)
+
 addBook();
-// Temporary (For viewing display result)
-addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 259,  true)
-addBookToLibrary('The Book', 'The amazing author', 259)
-addBookToLibrary('The Book', 'The amazing author', 259)
-addBookToLibrary('The Book', 'The amazing author', 259)
-console.log(myLibrary);
 displayBooks();
-// addEventToButtons();
