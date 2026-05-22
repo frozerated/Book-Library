@@ -53,9 +53,23 @@ function displayBooks(){
             updateLibrary();
         } )
         card.appendChild(removeBtn);
+
+        let statusBtn = document.createElement('button');
+        if(book.haveRead){
+            statusBtn.textContent = 'Mark as Unread';
+        }else{
+            statusBtn.textContent = 'Mark as Read';
+        }
+        statusBtn.id = book.id;
+        statusBtn.className = 'toggleStatus';
+        statusBtn.addEventListener('click', (event)=>{
+            toggleStatus(event.target.id);
+        })
+        card.appendChild(statusBtn);
+        
     }
-   
 }
+
 
 function addBook(){
     
@@ -81,6 +95,20 @@ function updateLibrary(){
 }
 
 
+function toggleStatus(book_id){
+    for(book of myLibrary){
+        if(book['id'] == book_id){
+            console.log(book.haveRead);
+            book.changeStatus();
+            console.log(book.haveRead);
+        }
+    }
+}
+
+Book.prototype.changeStatus = function(){
+    this.haveRead ? this.haveRead = false : this.haveRead =true;
+}
+
 function removeBook(book_id){
     // console.log(book_id);
     for(book of myLibrary){
@@ -92,11 +120,11 @@ function removeBook(book_id){
 }
 
 addBook();
+
 // Temporary (For viewing display result)
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 259,  true)
 addBookToLibrary('The Book', 'The amazing author', 259)
 addBookToLibrary('The Book', 'The amazing author', 259)
 addBookToLibrary('The Book', 'The amazing author', 259)
 console.log(myLibrary);
-
 displayBooks();
