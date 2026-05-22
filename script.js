@@ -47,7 +47,7 @@ function displayBooks(){
         removeBtn.textContent = 'Remove';
         removeBtn.className = 'removeBtn';
         removeBtn.id = book['id'];
-        card.appendChild(removeBtn);
+        
 
         let statusBtn = document.createElement('button');
         if(book.haveRead){
@@ -60,6 +60,8 @@ function displayBooks(){
         card.appendChild(statusBtn);
 
 
+
+        card.appendChild(removeBtn);
         addEventToButtons(removeBtn, statusBtn);
         
     }
