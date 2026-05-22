@@ -40,7 +40,20 @@ function displayBooks(){
         card.appendChild(pages);
 
         let status = document.createElement('p');
-        status.innerHTML = `Status: <span>${(book['haveRead'] ? 'Read' : 'Unread')}</span>`
+        book['haveRead'] ? 'Read' : 'Unread';
+        let statusText = '';
+        let state = '';
+
+        if(book['haveRead']){
+            statusText = 'Read'
+            status.classList = 'status read';
+        }else{
+            statusText = 'Unread';
+            status.classList = 'status unread';
+        }
+        // status.innerHTML = `Status: <span>${(book['haveRead'] ? 'Read' : 'Unread')}</span>`
+        status.innerHTML = `Status: <span>${statusText}</span>`
+        // status.style.color = 'blue';
         card.appendChild(status);
 
         let removeBtn = document.createElement('button');

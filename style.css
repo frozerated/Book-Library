@@ -80,6 +80,8 @@ h1, h2, h3, h4, h5, h6 {
   --btn-toggle-active-hover: #596448;
   --btn-toggle-border: #5C4632;
 
+  --status-read: #799172;
+  --status-unread: #913636;
   
 }
 
@@ -125,6 +127,17 @@ body{
   color: var(--text-title);
 }
 
+.status.unread span{
+  font-weight: 600;
+  color:var(--status-unread);
+}
+
+.status.read span{
+  font-weight: 600;
+  color:var(--status-read)
+}
+
+
 .card > .removeBtn{
   color: var(--text-light);
   background-color: var(--btn-remove-bg);
@@ -158,10 +171,11 @@ body{
   background-color: var(--btn-toggle-active-hover);
 }
 
-
 button{
   cursor: pointer;
 }
+
+
 
 
 .sidebar{
