@@ -34,6 +34,8 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+  word-break: break-all;
+
 }
 
 p {
@@ -114,7 +116,6 @@ body{
   gap:12px;
   grid-row: span 6;
 
-
   background-color: var(--card-bg);
   color: var(--text-body);
   border: 1px solid var(--card-border);
@@ -124,7 +125,7 @@ body{
 }
 
 .card > h2{
-  color: var(--text-title);
+  color: var(--text-title); 
 }
 
 .status.unread span{
