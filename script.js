@@ -98,9 +98,7 @@ function updateLibrary(){
 function toggleStatus(book_id){
     for(book of myLibrary){
         if(book['id'] == book_id){
-            console.log(book.haveRead);
             book.changeStatus();
-            console.log(book.haveRead);
         }
     }
 }
@@ -120,7 +118,6 @@ function removeBook(book_id){
 }
 
 addBook();
-
 // Temporary (For viewing display result)
 addBookToLibrary('The Hobbit', 'J.R.R Tolkien', 259,  true)
 addBookToLibrary('The Book', 'The amazing author', 259)
