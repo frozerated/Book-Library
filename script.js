@@ -47,11 +47,6 @@ function displayBooks(){
         removeBtn.textContent = 'Remove';
         removeBtn.className = 'removeBtn';
         removeBtn.id = book['id'];
-        removeBtn.addEventListener('click', (event)=>{
-            
-            removeBook(event.target.id);
-            updateLibrary();
-        } )
         card.appendChild(removeBtn);
 
         let statusBtn = document.createElement('button');
@@ -62,10 +57,10 @@ function displayBooks(){
         }
         statusBtn.id = book.id;
         statusBtn.className = 'toggleStatus';
-        statusBtn.addEventListener('click', (event)=>{
-            toggleStatus(event.target.id);
-        })
         card.appendChild(statusBtn);
+
+
+        addEventToButtons(removeBtn, statusBtn);
         
     }
 }
@@ -92,6 +87,18 @@ function addBook(){
 function updateLibrary(){
     library.replaceChildren();
     displayBooks();
+}
+
+function addEventToButtons(removeBtn, statusBtn){
+    statusBtn.addEventListener('click', (event)=>{
+        toggleStatus(event.target.id);
+        updateLibrary();
+    })
+
+    removeBtn.addEventListener('click', event =>{
+        removeBook(event.target.id);
+        updateLibrary();
+    })
 }
 
 
@@ -125,3 +132,4 @@ addBookToLibrary('The Book', 'The amazing author', 259)
 addBookToLibrary('The Book', 'The amazing author', 259)
 console.log(myLibrary);
 displayBooks();
+// addEventToButtons();
