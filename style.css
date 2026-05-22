@@ -66,19 +66,21 @@ h1, h2, h3, h4, h5, h6 {
   --text-light: #F8F3E8;
 
   --btn-add-bg: #5F6F52;
+  --btn-add-border: #435038;
   --btn-add-hover: #4B5A3F;
 
   --btn-remove-bg: #7B3F3F;
   --btn-remove-hover: #5E2E2E;
+  --btn-remove-border: #4A2323;
 
   --btn-toggle-bg: #8A6A4A;
   --btn-toggle-hover: #73563B;
 
   --btn-toggle-active: #6F7B5B;
   --btn-toggle-active-hover: #596448;
-
-  --btn-toggle-text: #F8F3E8;
   --btn-toggle-border: #5C4632;
+
+  
 }
 
 body{
@@ -126,7 +128,7 @@ body{
 .card > .removeBtn{
   color: var(--text-light);
   background-color: var(--btn-remove-bg);
-  border: none;
+  border: var(--btn-remove-border) 2px solid;
   border-radius: 8px;
   padding: 3px;
 
@@ -142,6 +144,7 @@ body{
 
   background-color: var(--btn-toggle-bg);
   border: var(--btn-toggle-border) 2px solid;
+  color:var(--text-light);
 }
 
 .card > .statusBtn:hover{
@@ -199,7 +202,7 @@ form > button{
   margin-top: 12px;;
   background-color: var(--btn-add-bg);
   color: var(--text-light);
-  border: none;
+  border: var(--btn-add-border) 2px solid;
   border-radius: 6px;
   padding: 12px;
 }
