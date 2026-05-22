@@ -56,7 +56,7 @@ function displayBooks(){
             statusBtn.textContent = 'Mark as Read';
         }
         statusBtn.id = book.id;
-        statusBtn.className = 'toggleStatus';
+        book.haveRead ? statusBtn.classList = 'statusBtn' : statusBtn.classList = 'statusBtn active'
         card.appendChild(statusBtn);
 
 
