@@ -71,9 +71,14 @@ h1, h2, h3, h4, h5, h6 {
   --btn-remove-bg: #7B3F3F;
   --btn-remove-hover: #5E2E2E;
 
-  --accent-gold: #C2A878;
-  --accent-blue: #6E7F80;
-  --accent-copper: #A26749;
+  --btn-toggle-bg: #8A6A4A;
+  --btn-toggle-hover: #73563B;
+
+  --btn-toggle-active: #6F7B5B;
+  --btn-toggle-active-hover: #596448;
+
+  --btn-toggle-text: #F8F3E8;
+  --btn-toggle-border: #5C4632;
 }
 
 body{
@@ -130,6 +135,26 @@ body{
 .card > .removeBtn:hover{
   background-color: var(--btn-remove-hover);
 }
+
+.card > .statusBtn{
+  border-radius:8px;
+  padding: 3px;  
+
+  background-color: var(--btn-toggle-bg);
+  border: var(--btn-toggle-border) 2px solid;
+}
+
+.card > .statusBtn:hover{
+  background-color: var(--btn-toggle-hover);
+}
+
+.card > .statusBtn.active{
+  background-color: var(--btn-toggle-active);
+}
+.card > .statusBtn.active:hover{
+  background-color: var(--btn-toggle-active-hover);
+}
+
 
 button{
   cursor: pointer;
