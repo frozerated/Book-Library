@@ -103,7 +103,7 @@ body{
   display: grid;
   grid-template-rows: subgrid;
   gap:12px;
-  grid-row: span 5;
+  grid-row: span 6;
 
 
   background-color: var(--card-bg);
