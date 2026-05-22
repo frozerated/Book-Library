@@ -34,7 +34,6 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
-  word-break: break-all;
 
 }
 
@@ -113,6 +112,7 @@ body{
 .card{
   display: grid;
   grid-template-rows: subgrid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap:12px;
   grid-row: span 6;
 
@@ -175,9 +175,6 @@ body{
 button{
   cursor: pointer;
 }
-
-
-
 
 .sidebar{
   background-color: var(--bg-secondary);
