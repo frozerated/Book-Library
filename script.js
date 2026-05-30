@@ -12,6 +12,10 @@ class Book {
     get info(){
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead}`;
     }
+
+    changeStatus(){
+        this.haveRead ? this.haveRead = false : this.haveRead = true;
+    }
 }
 
 
@@ -36,7 +40,6 @@ function addBookToLibrary(title, author, pages, haveRead) {
 
 function displayBooks() {
 
-    
     let library = document.querySelector('.books-container');
     for (book of myLibrary) {
         card = document.createElement('div')
@@ -141,9 +144,6 @@ function toggleStatus(book_id) {
     }
 }
 
-Book.prototype.changeStatus = function () {
-    this.haveRead ? this.haveRead = false : this.haveRead = true;
-}
 
 function removeBook(book_id) {
     // console.log(book_id);
