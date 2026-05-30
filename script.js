@@ -34,9 +34,10 @@ function addBookToLibrary(title, author, pages, haveRead) {
     myLibrary.push(newBook);
 }
 
-let library = document.querySelector('.books-container');
 function displayBooks() {
 
+    
+    let library = document.querySelector('.books-container');
     for (book of myLibrary) {
         card = document.createElement('div')
         card.className = 'card';
