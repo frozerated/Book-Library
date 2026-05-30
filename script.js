@@ -1,28 +1,43 @@
 let myLibrary = [];
 
+class Book {
+    constructor(title, author, pages, haveRead = false) {
+        this.id = crypto.randomUUID();
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.haveRead = haveRead;
+    }
 
-function Book(title, author, pages, haveRead=false){
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.haveRead = haveRead;
-
-  this.info = function(){
-    this.haveRead = this.haveRead ? 'have read' : 'not read yet';
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead}`;
-  }
+    get info(){
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead}`;
+    }
 }
 
-function addBookToLibrary(title, author, pages, haveRead){
-  let newBook = new Book(title, author, pages, haveRead)
-  myLibrary.push(newBook);
+
+
+// function Book(title, author, pages, haveRead = false) {
+//     this.id = crypto.randomUUID();
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.haveRead = haveRead;
+
+//     this.info = function () {
+//         this.haveRead = this.haveRead ? 'have read' : 'not read yet';
+//         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead}`;
+//     }
+// }
+
+function addBookToLibrary(title, author, pages, haveRead) {
+    let newBook = new Book(title, author, pages, haveRead)
+    myLibrary.push(newBook);
 }
 
 let library = document.querySelector('.books-container');
-function displayBooks(){
-    
-    for(book of myLibrary){
+function displayBooks() {
+
+    for (book of myLibrary) {
         card = document.createElement('div')
         card.className = 'card';
         library.appendChild(card)
@@ -34,7 +49,7 @@ function displayBooks(){
         let author = document.createElement('p');
         author.innerHTML = `Author: <u> ${book['author']} </u>`;
         card.appendChild(author)
-        
+
         let pages = document.createElement('p');
         pages.textContent = `Pages: ${book['pages']}`;
         card.appendChild(pages);
@@ -44,10 +59,10 @@ function displayBooks(){
         let statusText = '';
         let state = '';
 
-        if(book['haveRead']){
+        if (book['haveRead']) {
             statusText = 'Read'
             status.classList = 'status read';
-        }else{
+        } else {
             statusText = 'Unread';
             status.classList = 'status unread';
         }
@@ -60,12 +75,12 @@ function displayBooks(){
         removeBtn.textContent = 'Remove';
         removeBtn.className = 'removeBtn';
         removeBtn.id = book['id'];
-        
+
 
         let statusBtn = document.createElement('button');
-        if(book.haveRead){
+        if (book.haveRead) {
             statusBtn.textContent = 'Mark as Unread';
-        }else{
+        } else {
             statusBtn.textContent = 'Mark as Read';
         }
         statusBtn.id = book.id;
@@ -76,15 +91,15 @@ function displayBooks(){
 
         card.appendChild(removeBtn);
         addEventToButtons(removeBtn, statusBtn);
-        
+
     }
 }
 
 
-function addBook(){
-    
+function addBook() {
+
     let addBtn = document.querySelector("#addBook");
-    addBtn.addEventListener('click', (event)=>{
+    addBtn.addEventListener('click', (event) => {
         event.preventDefault();
 
         let form = document.querySelector('#form');
@@ -99,40 +114,40 @@ function addBook(){
     })
 }
 
-function updateLibrary(){
+function updateLibrary() {
     library.replaceChildren();
     displayBooks();
 }
 
-function addEventToButtons(removeBtn, statusBtn){
-    statusBtn.addEventListener('click', (event)=>{
+function addEventToButtons(removeBtn, statusBtn) {
+    statusBtn.addEventListener('click', (event) => {
         toggleStatus(event.target.id);
         updateLibrary();
     })
 
-    removeBtn.addEventListener('click', event =>{
+    removeBtn.addEventListener('click', event => {
         removeBook(event.target.id);
         updateLibrary();
     })
 }
 
 
-function toggleStatus(book_id){
-    for(book of myLibrary){
-        if(book['id'] == book_id){
+function toggleStatus(book_id) {
+    for (book of myLibrary) {
+        if (book['id'] == book_id) {
             book.changeStatus();
         }
     }
 }
 
-Book.prototype.changeStatus = function(){
-    this.haveRead ? this.haveRead = false : this.haveRead =true;
+Book.prototype.changeStatus = function () {
+    this.haveRead ? this.haveRead = false : this.haveRead = true;
 }
 
-function removeBook(book_id){
+function removeBook(book_id) {
     // console.log(book_id);
-    for(book of myLibrary){
-        if(book['id'] == book_id){
+    for (book of myLibrary) {
+        if (book['id'] == book_id) {
             let index = myLibrary.indexOf(book);
             myLibrary.splice(index, 1);
         }
@@ -140,7 +155,7 @@ function removeBook(book_id){
 }
 
 
-addBookToLibrary('Prey', 'Michael Crichton', 502,  true)
+addBookToLibrary('Prey', 'Michael Crichton', 502, true)
 addBookToLibrary('Another Book', 'frozerated', 203)
 addBookToLibrary('The Lincoln Lawyer ', 'Michael Connelly', 489, true)
 addBookToLibrary('This is yet another book', 'The amazing author', 259)
