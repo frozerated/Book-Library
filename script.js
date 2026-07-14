@@ -119,8 +119,9 @@ class displayLibrary {
         })
 
         removeBtn.addEventListener('click', event => {
-            removeBook(event.target.id);
-            updateLibrary();
+            this.library.removeBook(event.target.id);
+            
+            this.updateLibrary();
         })
     }
 
@@ -138,8 +139,6 @@ class displayLibrary {
         }
     }
 
-
-
     addBook(library) {
 
         let addBtn = document.querySelector("#addBook");
@@ -154,6 +153,8 @@ class displayLibrary {
             let haveRead = document.querySelector("input[name='status']:checked")?.value;
 
             library.addBookToLibrary(title, author, pages, haveRead);
+            console.log(library);
+            
             this.updateLibrary();
             form.reset();
         })
